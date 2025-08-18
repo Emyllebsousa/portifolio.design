@@ -1,0 +1,69 @@
+/* Media Queries para Telas Menores (Responsividade) */
+
+@media screen and (max-width: 992px) {
+    /* Ajustes para tablets e telas menores */
+    .about-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .hero-text h1 {
+        font-size: 42px;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    /* Ajustes para celulares */
+
+    /* Cabeçalho */
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    /* Seção de Início (Hero) */
+    #inicio {
+        flex-direction: column-reverse; /* Imagem fica embaixo no mobile */
+        text-align: center;
+        gap: 40px;
+        margin-top: 40px;
+    }
+    
+    .hero-text a {
+        margin: 0 5px;
+    }
+
+    .hero-image img {
+        width: 280px;
+        height: 280px;
+    }
+    
+    /* Seção Sobre */
+    .about-stats {
+        grid-template-columns: 1fr; /* Coluna única para estatísticas */
+    }
+
+    /* Habilidades e Projetos */
+    .skills-grid, .project-grid {
+        grid-template-columns: 1fr; /* Coluna única para os cards */
+    }
+    
+    /* Rodapé */
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .footer-column-center .social-icons {
+        justify-content: center;
+    }
+}

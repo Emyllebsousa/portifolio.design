@@ -1,0 +1,444 @@
+/* --- Configurações Globais e Variáveis --- */
+:root {
+    --bg-color: #F9F9FF; /* Cor de fundo quase branca */
+    --primary-text: #212529; /* Cor do texto principal */
+    --secondary-text: #6c757d; /* Cor do texto secundário */
+    --gradient-start: #8c52ff;
+    --gradient-end: #4e74e5;
+    --white: #FFFFFF;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f2eee8;
+    color: var(--primary-text);
+}
+
+/* --- Cabeçalho e Navegação --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 15px;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+    vertical-align: middle;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+nav a {
+    color: var(--secondary-text);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--gradient-start);
+}
+
+/* --- Botões --- */
+.btn {
+    padding: 10px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+    color: var(--white);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-text);
+    border: 1px solid #ddd;
+}
+
+/* --- Botão dos Cards de Projeto (Corrigido) --- */
+.btn-project {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 16px;
+    background-color: #f0f0f0;
+    color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    margin-bottom: 20px; /* ADICIONADO: Espaço abaixo do botão */
+    transition: all 0.3s ease; /* AJUSTADO: Para animar todos os efeitos */
+}
+
+.btn-project:hover {
+    background-color: #e0e0e0;
+    transform: translateY(-3px); /* ADICIONADO: Efeito de levantar */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* ADICIONADO: Efeito de sombra */
+}
+
+
+/* --- Estrutura Geral das Seções --- */
+section {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 20px 15px;
+}
+
+.section-header, .section-header-left {
+    margin-bottom: 40px;
+}
+
+.section-header {
+    text-align: center;
+}
+
+.section-header h2, .section-header-left h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    color: var(--secondary-text);
+}
+
+
+/* --- Seção de Início (Hero) --- */
+#inicio {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 50px;
+    gap: 40px;
+}
+
+.hero-text {
+    max-width: 550px;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 18px;
+    color: var(--secondary-text);
+    margin-bottom: 30px;
+}
+
+.hero-text a {
+    margin-right: 15px;
+}
+
+.hero-image img {
+    width: 350px;
+    height: 350px;
+    border-radius: 30px;
+    object-fit: cover;
+    box-shadow: var(--shadow);
+}
+
+/* --- Seção Sobre --- */
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.about-text {
+    flex: 1.5;
+}
+
+.about-text p {
+    font-size: 16px;
+    color: var(--secondary-text);
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.about-stats {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.stat-card {
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.stat-card h3 {
+    font-size: 32px;
+    font-weight: 700;
+    background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.stat-card p {
+    font-size: 14px;
+    color: var(--secondary-text);
+}
+
+.stat-card:nth-child(1) { background-color: #F0F0FF; }
+.stat-card:nth-child(2) { background-color: #E6F7FF; }
+.stat-card:nth-child(3) { background-color: #FFF0F5; }
+.stat-card:nth-child(4) { background-color: #F0FFF0; }
+
+
+/* --- Seção Habilidades --- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.skill-card {
+    background-color: var(--white);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.skill-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.skill-header h3 {
+    font-size: 18px;
+    font-weight: 500;
+    flex-grow: 1;
+}
+
+.skill-header span {
+    font-weight: 600;
+    color: var(--secondary-text);
+}
+
+.skill-icon {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(90deg, #8a2be220, #4169e120);
+    color: var(--gradient-start);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+    border-radius: 5px;
+}
+
+.skill-description {
+    margin-top: 15px;
+    font-size: 14px;
+    color: var(--secondary-text);
+    line-height: 1.6;
+}
+
+
+/* --- Seção de Projetos --- */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    text-align: left;
+}
+
+.card {
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.card-content p {
+    color: var(--secondary-text);
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.tags span {
+    background-color: #f2eee8;
+    color: var(--secondary-text);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+
+/* --- Rodapé --- */
+footer {
+    background-color: #1c1c24;
+    color: #a9a9b3;
+    padding: 60px 15px;
+    margin-top: 80px;
+    border-top: 4px solid var(--gradient-start);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    gap: 40px;
+    flex-wrap: wrap; 
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-column h4 {
+    font-size: 18px;
+    color: var(--white);
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.footer-column-center {
+    text-align: center;
+}
+
+.footer-about .logo {
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+/* Regra para a logo do rodapé (corrigido) */
+.footer-about .logo a {
+    font-size: 24px;
+    font-weight: 600;
+    text-decoration: none;
+    background: none;
+    -webkit-background-clip: unset;
+    background-clip: unset;
+    color: var(--white);
+}
+
+.footer-about .footer-tagline {
+    line-height: 1.7;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.footer-about .copyright {
+    font-size: 13px;
+    color: #777;
+}
+
+.footer-links, .footer-contact-list {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li, .footer-contact-list li {
+    margin-bottom: 12px;
+}
+
+.footer-links a, .footer-contact-list a {
+    color: #a9a9b3;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover, .footer-contact-list a:hover {
+    color: var(--white);
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+/* Centraliza os ícones na coluna centralizada */
+.footer-column-center .social-icons {
+    justify-content: center;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #2a2a35;
+    border-radius: 50%;
+    color: var(--white);
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+    transform: translateY(-3px);
+}
