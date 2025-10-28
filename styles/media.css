@@ -1,69 +1,19 @@
-/* Media Queries para Telas Menores (Responsividade) */
-
-@media screen and (max-width: 992px) {
-    /* Ajustes para tablets e telas menores */
-    .about-container {
-        flex-direction: column;
-        gap: 40px;
-    }
-
-    .hero-text h1 {
-        font-size: 42px;
-    }
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
 }
 
-
-@media screen and (max-width: 768px) {
-    /* Ajustes para celulares */
-
-    /* Cabeçalho */
-    header {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-    }
-
-    /* Seção de Início (Hero) */
-    #inicio {
-        flex-direction: column-reverse; /* Imagem fica embaixo no mobile */
-        text-align: center;
-        gap: 40px;
-        margin-top: 40px;
-    }
-    
-    .hero-text a {
-        margin: 0 5px;
-    }
-
-    .hero-image img {
-        width: 280px;
-        height: 280px;
-    }
-    
-    /* Seção Sobre */
-    .about-stats {
-        grid-template-columns: 1fr; /* Coluna única para estatísticas */
-    }
-
-    /* Habilidades e Projetos */
-    .skills-grid, .project-grid {
-        grid-template-columns: 1fr; /* Coluna única para os cards */
-    }
-    
-    /* Rodapé */
-    .footer-container {
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-        gap: 40px;
-    }
-
-    .footer-column-center .social-icons {
-        justify-content: center;
-    }
+/* --- Dark mode opcional automático --- */
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg-color:#0f1115;
+    --primary-text:#e7e7ea;
+    --secondary-text:#b3b6bd;
+    --white:#141823;
+    --chip:#1a1f2a;
+  }
+  header{ background: rgba(16,18,24,.65); border-bottom-color: rgba(255,255,255,.06); }
+  nav a{ color: var(--secondary-text); }
+  .btn-secondary{ border-color: rgba(255,255,255,.15); color: var(--primary-text); }
+  .skill-card, .card{ box-shadow: none; border: 1px solid rgba(255,255,255,.06); }
+  .footer-about .copyright{ color:#8a8f9a; }
 }
